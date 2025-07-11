@@ -1,0 +1,35 @@
+<h2>Gallery</h2>
+<div id="gallery" class="box alt">
+  <div class="row gtr-50 gtr-uniform" id="media-container"></div>
+</div>
+
+<script>
+  const folder = 'gallery/';
+  const container = document.getElementById('media-container');
+
+  fetch(`${folder}media.json`)
+    .then(response => response.json())
+    .then(files => {
+      files.forEach(file => {
+        const ext = file.split('.').pop().toLowerCase();
+        const col = document.createElement('div');
+        col.className = 'col-4';
+
+        if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+          col.innerHTML = `<span class="image fit"><img src="${folder + file}" alt="${file}"></span>`;
+        } else if (['mp4', 'webm', 'ogg'].includes(ext)) {
+          col.innerHTML = `
+            <video class="image fit" controls>
+              <source src="${folder + file}" type="video/${ext}">
+              Your browser does not support the video tag.
+            </video>`;
+        }
+
+        container.appendChild(col);
+      });
+    })
+    .catch(error => {
+      console.error('Failed to load media:', error);
+      container.innerHTML = '<p>Error loading gallery.</p>';
+    });
+</script>
