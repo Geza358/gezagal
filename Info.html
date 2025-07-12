@@ -1,7 +1,12 @@
 <!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 	<head>
-		<title>Gallerie</title>
+		<title>Steckbrief Download</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -14,7 +19,7 @@
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Gallerie</a>
+						<a href="index.html" class="logo">Steckbrief Download</a>
 					</header>
 
 				<!-- Nav -->
@@ -22,8 +27,8 @@
 						<ul class="links">
 							<li><a href="index.html">Porträt</a></li>
 							<li><a href="generic.html">Aktuelles</a></li>
-							<li class="active"><a href="gallery.html">Galerie</a></li>
-							<li><a href="Info.html">Steckbrief</a></li>
+							<li><a href="gallery.html">Galerie</a></li>
+                            <li class="active"><a href="Info.html">Steckbrief</a></li>
 						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
@@ -35,43 +40,12 @@
 				<!-- Main -->
 					<div id="main">
 
-<div class="box alt">
-	<div class="row gtr-50 gtr-uniform" id="gallery-container"></div>
-</div>
+						<!-- Post -->
+							<section class="post">
+                                <a href="docs/Geza_Steckbrief.pdf" target="_blank">Open PDF</a>
+                            </section>
 
-<script>
-	const galleryFolder = 'gallery/';
-	const galleryContainer = document.getElementById('gallery-container');
-
-	fetch(galleryFolder + 'media.json')
-		.then(res => res.json())
-		.then(files => {
-			files.forEach(file => {
-				const ext = file.split('.').pop().toLowerCase();
-				const col = document.createElement('div');
-				col.className = 'col-4';
-
-				if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
-					col.innerHTML = `
-						<span class="image fit">
-							<img src="${galleryFolder + file}" alt="${file}">
-						</span>`;
-				} else if (['mp4', 'webm', 'ogg'].includes(ext)) {
-					col.innerHTML = `
-						<video class="image fit" controls>
-							<source src="${galleryFolder + file}" type="video/${ext}">
-							Your browser does not support the video tag.
-						</video>`;
-				}
-
-				galleryContainer.appendChild(col);
-			});
-		})
-		.catch(err => {
-			console.error('Error loading media.json:', err);
-			galleryContainer.innerHTML = '<p>Could not load gallery.</p>';
-		});
-</script>
+					</div>
 
 				<!-- Copyright -->
 					<div id="copyright">
