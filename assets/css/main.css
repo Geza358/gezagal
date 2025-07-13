@@ -4286,20 +4286,6 @@ input, select, textarea {
 						align-items: flex-start;
 					}
 
-					/* Center the contact sections inside the footer */
-					#footer > section.split.contact {
-						display: flex;
-						justify-content: center; /* Horizontally center the sections */
-						gap: 3rem;               /* Optional: space between sections */
-						flex-wrap: wrap;         /* Wrap on small screens */
-					}
-
-					/* Optional: Center the text inside each section */
-					#footer > section.split.contact > section {
-						flex-direction: column;  /* Stack elements vertically */
-						text-align: center;      /* Center text inside each box */
-					}
-
 
 						#footer > section.split.contact > section.alt > :last-child {
 							margin-top: -0.325rem;
@@ -4701,4 +4687,20 @@ input, select, textarea {
 			visibility: visible;
 		}
 
+	}
+
+	/* ✅ Center all contact sections horizontally */
+	#footer .split.contact {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 3rem; /* Optional spacing between Telefon and Email blocks */
+	}
+
+	/* ✅ Center content inside each contact section */
+	#footer .split.contact > section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
 	}
