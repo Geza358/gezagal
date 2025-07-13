@@ -2643,8 +2643,7 @@ input, select, textarea {
 			}
 
 			.image.main img {
-				width: 700px;
-				height:400px;
+				height: 100%;
 			}
 
 		@media screen and (max-width: 736px) {
