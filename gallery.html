@@ -35,45 +35,45 @@
 
 				<!-- Main -->
 					<div id="main">
+						<section>
+						<div class="box alt">
+							<div class="row gtr-50 gtr-uniform" id="gallery-container"></div>
+						</div>
 
-<div class="box alt">
-	<div class="row gtr-50 gtr-uniform" id="gallery-container"></div>
-</div>
+						<script>
+							const galleryFolder = 'gallery/';
+							const galleryContainer = document.getElementById('gallery-container');
 
-<script>
-	const galleryFolder = 'gallery/';
-	const galleryContainer = document.getElementById('gallery-container');
+							fetch(galleryFolder + 'media.json')
+								.then(res => res.json())
+								.then(files => {
+									files.forEach(file => {
+										const ext = file.split('.').pop().toLowerCase();
+										const col = document.createElement('div');
+										col.className = 'col-4';
 
-	fetch(galleryFolder + 'media.json')
-		.then(res => res.json())
-		.then(files => {
-			files.forEach(file => {
-				const ext = file.split('.').pop().toLowerCase();
-				const col = document.createElement('div');
-				col.className = 'col-4';
+										if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
+											col.innerHTML = `
+												<span class="image fit">
+													<img src="${galleryFolder + file}" alt="${file}">
+												</span>`;
+										} else if (['mp4', 'webm', 'ogg'].includes(ext)) {
+											col.innerHTML = `
+												<video class="image fit" controls>
+													<source src="${galleryFolder + file}" type="video/${ext}">
+													Your browser does not support the video tag.
+												</video>`;
+										}
 
-				if (['jpg', 'jpeg', 'png', 'gif', 'webp'].includes(ext)) {
-					col.innerHTML = `
-						<span class="image fit">
-							<img src="${galleryFolder + file}" alt="${file}">
-						</span>`;
-				} else if (['mp4', 'webm', 'ogg'].includes(ext)) {
-					col.innerHTML = `
-						<video class="image fit" controls>
-							<source src="${galleryFolder + file}" type="video/${ext}">
-							Your browser does not support the video tag.
-						</video>`;
-				}
-
-				galleryContainer.appendChild(col);
-			});
-		})
-		.catch(err => {
-			console.error('Error loading media.json:', err);
-			galleryContainer.innerHTML = '<p>Could not load gallery.</p>';
-		});
-</script>
-
+										galleryContainer.appendChild(col);
+									});
+								})
+								.catch(err => {
+									console.error('Error loading media.json:', err);
+									galleryContainer.innerHTML = '<p>Could not load gallery.</p>';
+								});
+						</script>
+						</section>
 				<!-- Impressum -->
 				<div id="copyright">
 					<ul>
