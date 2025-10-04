@@ -2072,7 +2072,7 @@ input, select, textarea {
 	.fb-page > span, 
 	.fb-page > span > iframe {
 	width: 100% !important;    /* force iframe to take full width of container */
-	max-width: 1000px;          /* optional: limit maximum width */
+	max-width: 2000px;          /* optional: limit maximum width */
 	display: block;
 	}
 
