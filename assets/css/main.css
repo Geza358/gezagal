@@ -2060,16 +2060,21 @@ input, select, textarea {
 	}
 
 /* fb page */
+	/* container centers the embed */
 	.fb-container {
-	text-align: center; /* extra safety for centering */
-}
-	.fb-page {
+	display: flex;
+	justify-content: center;  /* horizontally center */
+	width: 100%;
+	}
+
+	/* make fb-page responsive */
+	.fb-page, 
+	.fb-page > span, 
+	.fb-page > span > iframe {
+	width: 100% !important;    /* force iframe to take full width of container */
+	max-width: 500px;          /* optional: limit maximum width */
 	display: block;
-	margin: 0 auto;
-	max-width: 20000px;      /* adjust to your preferred width */
-	width: 100%;           /* makes it responsive */
-	
-}
+	}
 
 /* Button */
 
