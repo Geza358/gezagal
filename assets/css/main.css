@@ -2059,6 +2059,17 @@ input, select, textarea {
 		border-color: #eeeeee;
 	}
 
+/* fb page */
+.fb-page {
+  display: inline-block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+#main article {
+  text-align: center;   /* centers inline-block elements */
+}
+
 /* Button */
 
 	input[type="submit"],
