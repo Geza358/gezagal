@@ -4494,12 +4494,12 @@ input, select, textarea {
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		display: none;
 		position: fixed;
-		top: 0.75rem;
-		right: 0.75rem;
+		top: 1.0rem;
+		right: 1.0rem;
 		border: 0;
 		color: #ffffff;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 0.9rem;
+		font-size: 1.5rem;
 		font-weight: 900;
 		letter-spacing: 0.075em;
 		padding: 0.375rem 1.25rem;
