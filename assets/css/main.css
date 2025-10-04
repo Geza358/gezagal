@@ -2062,9 +2062,12 @@ input, select, textarea {
 /* fb page */
 	/* container centers the embed */
 	.fb-container {
-	display: flex;
-	justify-content: center;  /* horizontally center */
+	/*display: flex;
+	justify-content: center;  /* horizontally center 
 	width: 100%;
+	*/
+	width: 100vw;             /* full viewport width */
+  	margin-left: calc(-50vw + 50%);
 	}
 
 	/* make fb-page responsive */
