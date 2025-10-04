@@ -2060,15 +2060,12 @@ input, select, textarea {
 	}
 
 /* fb page */
-.fb-page {
-  display: inline-block;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-#main article {
-  text-align: center;   /* centers inline-block elements */
-}
+	.fb-page {
+	display: block;
+	margin: 0 auto;
+	max-width: 500px;      /* adjust to your preferred width */
+	width: 100%;           /* makes it responsive */
+	}
 
 /* Button */
 
