@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Empfänger-Adresse (deine E-Mail)
-    $recipient = "fabian9821@t-online.de";
+    $recipient = "geza.gal.web@gmx.de";
 
     // Betreff der Mail
     $subject = "Neue Nachricht von $name";
