@@ -2066,7 +2066,7 @@ input, select, textarea {
 	.fb-page {
 	display: block;
 	margin: 0 auto;
-	max-width: 500px;      /* adjust to your preferred width */
+	max-width: 3000px;      /* adjust to your preferred width */
 	width: 100%;           /* makes it responsive */
 	
 }
