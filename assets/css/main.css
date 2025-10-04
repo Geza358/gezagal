@@ -4703,5 +4703,17 @@ input, select, textarea {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: 2rem;
 	}
+
+	@media (min-width: 768px) {
+  #footer .split.contact > section {
+    font-size: 3.5rem; /* tablet */
+  }
+}
+
+@media (min-width: 1200px) {
+  #footer .split.contact > section {
+    font-size: 5rem; /* desktop */
+  }
+}
